@@ -1,0 +1,45 @@
+Name: Basma Osama Ahmed 
+
+Commands used to make Docker Project:
+
+mkdir my-express-docker-project
+cd my-express-docker-project
+npm init -y
+npm install express mongoose ejs bcrypt express-session method-override dotenv
+npm install --save-dev nodemon
+docker-compose build
+docker-compose up
+
+* On Command Prompt as Administrator To Solve Docker Errors That Occur
+{
+DISM /Online /Cleanup-Image /RestoreHealth
+sfc /scannow
+wsl --update
+wsl --set-default-version 2
+}
+
+docker-compose up --build
+
+rm -rf node_modules package-lock.json
+docker-compose up --build
+
+npm uninstall bcrypt
+npm install bcryptjs
+
+docker ps
+
+To Ensure That MongoDB Compass Work and the database has been created:
+docker exec -it my-express-docker-project-mongo-1 mongosh
+show dbs
+use mydb
+show collections
+
+docker-compose down
+docker-compose up -d --build
+
+docker-compose down
+docker-compose up --build
+
+docker ps -a
+docker-compose down -v
+

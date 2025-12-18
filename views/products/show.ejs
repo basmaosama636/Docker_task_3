@@ -1,0 +1,13 @@
+<%- include('../partials/header') %>
+
+<div class="card">
+  <div class="card-body">
+    <h2><%= product.name %></h2>
+    <p><strong>Price:</strong> <%= product.price %></p>
+    <p><strong>Category:</strong> <%= product.category %></p>
+    <p><%= product.description %></p>
+    <a href="/products" class="btn btn-secondary">Back</a>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>

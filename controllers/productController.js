@@ -2,12 +2,12 @@ const Product = require('../models/Product');
 
 exports.index = async (req, res) => {
   try {
-    const q = req.query.q || ''; // قيمة البحث، لو مفيش خليها فاضية
+    const q = req.query.q || ''; 
     const products = await Product.find({
-      name: { $regex: q, $options: 'i' } // بحث نصي جزئي بدون مراعاة الحالة
+      name: { $regex: q, $options: 'i' } 
     }).sort({ createdAt: -1 });
 
-    res.render('products/list', { products, q }); // تمرير q للـ view
+    res.render('products/list', { products, q }); 
   } catch (err) {
     console.error(err);
     res.redirect('/');

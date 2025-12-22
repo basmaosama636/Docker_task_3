@@ -4,7 +4,6 @@ const session = require('express-session');
 const methodOverride = require('method-override');
 require('dotenv').config();
 
-// تعديل هنا: استبدال bcrypt بـ bcryptjs
 const bcrypt = require('bcryptjs');
 
 const authRoutes = require('./routes/auth');
@@ -23,7 +22,7 @@ app.use(session({
   saveUninitialized: false,
   cookie: {
     httpOnly: true,
-    secure: false   // لازم false في localhost
+    secure: false   
   }
 }));
 
@@ -33,7 +32,7 @@ app.use(async (req, res, next) => {
   next();
 });
 
-// Routes
+
 app.use('/', authRoutes);
 app.use('/products', productRoutes);
 
@@ -41,7 +40,7 @@ app.get('/', (req, res) => {
   res.redirect('/products');
 });
 
-// Connect MongoDB
+
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));

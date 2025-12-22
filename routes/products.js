@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const productController = require('../controllers/productController');
 
-// Middleware للتأكد من تسجيل الدخول
+
 function isLoggedIn(req, res, next) {
   if (!req.session.user) return res.redirect('/login');
   next();
